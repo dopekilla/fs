@@ -1,0 +1,6 @@
+# Включение перезаписи URL
+RewriteEngine On
+
+# Убедитесь, что модуль mod_rewrite включен
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
